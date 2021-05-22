@@ -1,13 +1,17 @@
 <template>
   <div class="container">
-    <form class="formcontent">
-      <h2>login</h2>
-      <FormGroup label="Nome *">
-        <CustomInput placeholder="Informe o nome" v-model="form.nome"/>  
-      </FormGroup>
-      <FormGroup label="E-mail *">
-        <CustomInput placeholder="Informe o e-mail" v-model="form.nome"/>  
-      </FormGroup>
+    <form class="form">
+      <FormBox title="Login">
+        <FormGroup label="E-mail *">
+          <CustomInput placeholder="Informe o nome" v-model="form.email"/>  
+        </FormGroup>
+        <FormGroup label="Senha *">
+          <CustomInput placeholder="Informe o e-mail" v-model="form.password"/>  
+        </FormGroup>
+        <div class="form__submit">
+          <Btn text="submit"/>
+        </div>
+      </FormBox>
     </form>
   </div>
 </template>
@@ -15,17 +19,22 @@
 <script>
 import FormGroup from '../components/buttons/FormGroup';
 import CustomInput from '../components/buttons/CustomInput';
+import Btn from '../components/buttons/Btn';
+import FormBox from '../components/formbox/FormBox';
 
 export default {
   components: {
     FormGroup,
-    CustomInput
+    CustomInput,
+    Btn,
+    FormBox
   },
   
   data() {
     return { 
       form: {
-        nome: ""
+        email: "",
+        password: ""
       }
     }
   }
@@ -38,18 +47,11 @@ export default {
     justify-content: center;
     align-items: center;
   }
-  .formcontent {
-    background-color: grey;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    margin-top: 10rem;
-    width: 40%;
-
-    h2 {
-      padding: 1.5rem;
-      text-align: center;
+ 
+    .form__submit {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0 2rem 0;
     }
-  }
  
 </style>

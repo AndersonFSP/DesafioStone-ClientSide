@@ -22,7 +22,7 @@ export default {
   .form-group {
     display: flex;
     flex-direction : column;
-    margin: 0 2rem 0.8rem 2rem;
+    margin: 0 2rem 1.5rem 2rem;
  }
 
  label {

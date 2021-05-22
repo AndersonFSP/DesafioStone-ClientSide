@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-   input.btn {
+   .btn {
     padding: 12px 20px;
     margin: 8px 0;
     border: 1px solid rgb(122, 118, 118);
