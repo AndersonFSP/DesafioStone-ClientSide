@@ -7,12 +7,17 @@
 
 <script>
 import Header from './components/header/Header';
+import store from './store/modules/auth';
 
 export default {
-
   components:{
     Header
-  }
+  },
+  mounted() {
+    if(localStorage.token)
+      store.state.token = localStorage.token
+    console.log(store.state)
+  },
 }
 </script>
 

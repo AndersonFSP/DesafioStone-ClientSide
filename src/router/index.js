@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import store from '../store/modules/auth';
 
 Vue.use(VueRouter)
 
@@ -8,21 +8,22 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import("../views/Home.vue")
+    component: () => import("../views/Home.vue"),
+    meta: { public: true }
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import("../views/Login")
+    component: () => import("../views/Login"),
+    meta: { public: true }
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  ,
+  {
+    path: '/create',
+    name: 'Create',
+    component: () => import("../views/CreateUser"),
+    meta: { public: true }
+  },
 ]
 
 const router = new VueRouter({
@@ -30,5 +31,12 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// if(localStorage.token)
+//     store.token = localStorage.token
+router.beforeEach((routeTo, routeFrom, next) => {
+  if(!routeTo.meta.public && !store.state.token) return next({ path:'/login' })
+  next()
+});
 
 export default router

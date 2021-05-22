@@ -4,7 +4,9 @@
       <li class="menu__item">
         <router-link to="/login" class="menu__link ativo">Login</router-link>
       </li> 
-      <li class="menu__item"><a class="menu__link" href="#">Cadastre-se</a></li>
+      <li class="menu__item">
+        <router-link to="/create" class="menu__link">Cadastre-se</router-link>
+      </li>
     </ul>
   </nav>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <div class="form-group">
+  <div :class="{'form-group': true, 'erro': erro}">
     <label>{{ label }}</label>
     <slot></slot>
-    <!-- <div style="font-size:0.8em;" v-if="menssagemErro && erro">{{ menssagemErro }}</div> -->
+    <div style="font-size:0.8em;" v-if="menssagemErro && erro">{{ menssagemErro }}</div>
   </div>
 </template>
 
@@ -13,6 +13,17 @@ export default {
     label: {
       type: String,
       default: "label"
+    },
+    hasError: {
+      type: Boolean,
+    },
+    menssagemErro: {
+      type: String,
+    }
+  },
+  computed: {
+    erro() {
+      return this.hasError ? 'erro': '';  
     }
   }
 }
@@ -27,5 +38,12 @@ export default {
 
  label {
    margin-bottom: 0.1rem;
+ }
+
+ .erro {
+   color: tomato;
+    & input {
+      border-color:tomato;
+    }
  }
 </style>

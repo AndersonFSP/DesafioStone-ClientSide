@@ -1,7 +1,17 @@
 <template>
   <div class="container">
     <form @submit.prevent="submit" class="form">
-      <FormBox title="Login">
+      <FormBox title="Cadastrar Usuário">
+        <FormGroup 
+          label="Nome *"
+          :hasError="campos_invalidos.name"
+          menssagemErro="nome não informado"
+        >
+          <CustomInput 
+            v-model="form.name"
+            placeholder="Digite o nome" 
+          />  
+        </FormGroup>
         <FormGroup 
           label="E-mail *"
           :hasError="campos_invalidos.email"
@@ -23,9 +33,6 @@
             type="password"
           />  
         </FormGroup>
-        <div class="failed" v-if="failed">
-          O email ou senha inseridos não está conectado a uma conta
-        </div>
         <div class="form__submit">
           <Btn text="submit"/>
         </div>
@@ -44,34 +51,31 @@ export default {
   },
   data() {
     return { 
-      tryFailed: false,
       form: {
+        name: "",
         email: "",
         password: ""
       }
     }
   },
-  computed: {
-    failed() {
-      return this.tryFailed 
-    }
-  },
   methods: {
-    ...mapActions(['login']),
-
+    ...mapActions(['createUser']),
+    
     async submit() {
       if(!this.validarSubmit()) 
         return ;
-     this.tryFailed = await this.login(this.form); 
+      this.createUser(this.form)
     },
     
     validacoes() {
-      let { email, password } = this.form;
+      let { name, email, password } = this.form;
       this.campos_invalidos = {
+        name: !name,
         email: !email,
         password: !password
       };
       let validacoes = [
+        { invalido: this.campos_invalidos.name },
         { invalido: this.campos_invalidos.email },
         { invalido: this.campos_invalidos.password },
       ];
@@ -94,10 +98,4 @@ export default {
     justify-content: center;
     margin: 1rem 0 2rem 0;
   }
-
-  .failed {
-    text-align: center;
-    color: tomato;
-  }
- 
 </style>

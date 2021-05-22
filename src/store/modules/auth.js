@@ -11,10 +11,16 @@ const getters = {
 
 const actions = {
   async login({ commit }, profile) {
-    const response =  await axios.post('/auth', profile);
-    const { token, user } = response.data;
-    console.log(response)
-    commit('defineUserLogin', { token, user })
+    try {
+      const response =  await axios.post('/auth', profile);
+      const { token, user } = response.data;
+      console.log(response.data)
+      localStorage.token = token;
+      commit('defineUserLogin', { token, user })
+      return false;
+    }catch(e) {
+      return true;
+    } 
   }
 }
 

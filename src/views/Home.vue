@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <h1 style="text-align:center;">Desafio Stone </h1>
+   <h1 style="text-align:center;">Desafio Stone</h1>
   </div>
 </template>
 
