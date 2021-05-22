@@ -27,7 +27,7 @@ export default {
     color: #333;
     
     @media screen and(min-width:0) {
-      width: 100%;
+      width: 95%;
     }
 
     @media screen and(min-width:768px) {
@@ -35,6 +35,9 @@ export default {
     }
 
     @media screen and(min-width:992px) {
+      width: 50%;
+    }
+    @media screen and(min-width:1200px) {
       width: 40%;
     }
 

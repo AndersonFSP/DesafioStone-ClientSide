@@ -1,12 +1,19 @@
 <template>
   <div class="container">
-    <form class="form">
+    <form @submit.prevent="submit" class="form">
       <FormBox title="Login">
         <FormGroup label="E-mail *">
-          <CustomInput placeholder="Informe o nome" v-model="form.email"/>  
+          <CustomInput 
+            v-model="form.email"
+            placeholder="Informe o nome" 
+          />  
         </FormGroup>
         <FormGroup label="Senha *">
-          <CustomInput placeholder="Informe o e-mail" v-model="form.password"/>  
+          <CustomInput 
+            v-model="form.password" 
+            placeholder="Informe o e-mail" 
+            type="password"
+          />  
         </FormGroup>
         <div class="form__submit">
           <Btn text="submit"/>
@@ -21,6 +28,7 @@ import FormGroup from '../components/buttons/FormGroup';
 import CustomInput from '../components/buttons/CustomInput';
 import Btn from '../components/buttons/Btn';
 import FormBox from '../components/formbox/FormBox';
+import { mapActions } from 'vuex';
 
 export default {
   components: {
@@ -37,6 +45,12 @@ export default {
         password: ""
       }
     }
+  },
+  methods: {
+    ...mapActions(['login']),
+    submit() {
+      this.login(this.form);
+    }
   }
 }
 </script>
@@ -48,10 +62,10 @@ export default {
     align-items: center;
   }
  
-    .form__submit {
-      display: flex;
-      justify-content: center;
-      margin: 1rem 0 2rem 0;
-    }
+  .form__submit {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+  }
  
 </style>

@@ -24,9 +24,13 @@ export default {
     cursor: pointer;
     font-size: 1.125rem;
     min-width: 200px;
-    /* width: 200px; */
     text-transform: uppercase;
     text-align: center;
     padding: 0.5rem 0 0.5rem 0;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      background-color: #b40c00;
+    }
   }
 </style>

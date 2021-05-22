@@ -1,6 +1,6 @@
 <template>
   <input 
-    type="text" 
+    :type="type" 
     class="btn" 
     :placeholder="placeholder" 
     name="search" 
@@ -13,7 +13,11 @@ export default {
   name: "CustomInput",
   props: {
     value: {},
-    placeholder: String
+    placeholder: String,
+    type: {
+      type: String,
+      default: "text"
+    }
   },
   methods: {
     handleInput(value) {
