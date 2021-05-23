@@ -19,7 +19,17 @@ export default {
   methods: {
     logout() {
       this.$store.commit('logout');
-      this.$router.push({ name: "Login"})
+      this.$swal.fire({
+          title: 'Usuário deslogado com sucesso',
+          position: 'top-end',
+          icon: 'success',
+          timer: 1500,
+          showConfirmButton: false,
+        });
+      const vm = this;
+      setTimeout(function(){ 
+        vm.$router.push({name: "Login"});
+      }, 2000);
     },
   },
   computed: {

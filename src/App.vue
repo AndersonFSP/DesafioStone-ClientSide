@@ -32,4 +32,10 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
 </style>

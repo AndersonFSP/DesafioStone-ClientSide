@@ -17,12 +17,17 @@ const routes = [
     component: () => import("../views/Login"),
     meta: { public: true }
   },
-  ,
   {
     path: '/create',
     name: 'Create',
     component: () => import("../views/CreateUser"),
     meta: { public: true }
+  },
+  {
+    path: '/select',
+    name: 'Select',
+    component: () => import("../views/Select"),
+    meta: { public: false }
   },
 ]
 

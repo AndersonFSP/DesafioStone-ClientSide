@@ -73,7 +73,7 @@ export default {
           icon: 'success',
           timer: 1500,
           showConfirmButton: false,
-      });
+        });
       const vm = this;
       setTimeout(function(){ 
         vm.$router.push({name: "Login"});
@@ -110,12 +110,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
- 
   .form__submit {
     display: flex;
     justify-content: center;

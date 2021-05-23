@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-   <h1 style="text-align:center;">Desafio Stone</h1>
+  <div class="container">
+   <h1>Desafio Stone</h1>
   </div>
 </template>
 
@@ -10,11 +10,5 @@ export default {
   name: 'Home',
   components: {
   },
-  methods: {
-    
-  },
-  // async created() {
-  //   let test = await mainAxios.get("list");
-  // }
 }
 </script>
