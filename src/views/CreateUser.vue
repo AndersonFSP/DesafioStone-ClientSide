@@ -64,7 +64,30 @@ export default {
     async submit() {
       if(!this.validarSubmit()) 
         return ;
-      this.createUser(this.form)
+
+      try {
+        await this.createUser(this.form);
+        this.$swal.fire({
+          title: 'Usuario criado com sucesso',
+          position: 'top-end',
+          icon: 'success',
+          timer: 1500,
+          showConfirmButton: false,
+      });
+      const vm = this;
+      setTimeout(function(){ 
+        vm.$router.push({name: "Login"});
+      }, 2000);
+      }catch {
+        this.$swal.fire({
+          title: 'Ocorreu um erro na criação do usuário',
+          position: 'top-end',
+          icon: 'error',
+          showConfirmButton: false,
+          confirmButtonColor: '#e00f00',
+          timer: 1500,
+      });
+      }
     },
     
     validacoes() {

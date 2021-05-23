@@ -13,11 +13,7 @@ export default {
   components:{
     Header
   },
-  mounted() {
-    if(localStorage.token)
-      store.state.token = localStorage.token
-    console.log(store.state.token)
-  },
+
 }
 </script>
 

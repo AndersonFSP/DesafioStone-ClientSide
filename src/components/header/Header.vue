@@ -1,19 +1,26 @@
 <template>
   <header class="cabecalho">
     <HeaderTitle/>
-    <HeaderLoggedOut/>
+    <HeaderLoggedOut v-if="!userLogged"/>
+    <HeaderLogged v-else/>
   </header>
 </template>
 
 <script>
 import HeaderTitle from './HeaderTitle';
 import HeaderLoggedOut from './headerLoggedOut';
+import HeaderLogged from './HeaderLogged';
+import { mapGetters } from 'vuex'
 
 export default {
   name: "AppHeader",
   components: {
     HeaderTitle,
-    HeaderLoggedOut
+    HeaderLoggedOut,
+    HeaderLogged
+  },
+  computed: {
+    ...mapGetters(['userLogged'])
   }
 }
 </script>

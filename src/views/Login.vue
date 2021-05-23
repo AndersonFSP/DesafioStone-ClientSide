@@ -51,7 +51,7 @@ export default {
   computed: {
     failed() {
       return this.tryFailed 
-    }
+    },
   },
   methods: {
     ...mapActions(['login']),
@@ -59,6 +59,7 @@ export default {
     async submit() {
       if(!this.validarSubmit()) 
         return ;
+
       try {
         await this.login(this.form); 
         this.$swal.fire({
@@ -79,6 +80,7 @@ export default {
           icon: 'error',
           showConfirmButton: false,
           confirmButtonColor: '#e00f00',
+          timer: 1500,
        });
       }
     },

@@ -32,8 +32,7 @@ const router = new VueRouter({
   routes
 })
 
-// if(localStorage.token)
-//     store.token = localStorage.token
+
 router.beforeEach((routeTo, routeFrom, next) => {
   if(!routeTo.meta.public && !store.state.token) return next({ path:'/login' })
   next()
