@@ -1,4 +1,5 @@
 import { mainAxios as axios } from "../../service/axios";
+import router from '../../router/index';
 
 const state = {
   token: null,
@@ -10,17 +11,28 @@ const getters = {
 }
 
 const actions = {
-  async login({ commit }, profile) {
+  async login({ commit }, form) {
     try {
-      const response =  await axios.post('/auth', profile);
+      const response =  await axios.post('/auth/login', form);
       const { token, user } = response.data;
-      console.log(response.data)
+      console.log(response.data);
       localStorage.token = token;
-      commit('defineUserLogin', { token, user })
-      return false;
+      commit('defineUserLogin', { token, user });
+      
     }catch(e) {
-      return true;
+      throw new Error("Error")
     } 
+  },
+
+  async createUser({ commit }, form) {
+    try {
+      console.log(form)
+      const response = await axios.post('/users', form);
+      console.log(response)
+      router.push({ name: "Login" })
+    }catch(e) {
+      console.log(e)
+    }
   }
 }
 

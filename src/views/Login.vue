@@ -23,9 +23,6 @@
             type="password"
           />  
         </FormGroup>
-        <div class="failed" v-if="failed">
-          O email ou senha inseridos não está conectado a uma conta
-        </div>
         <div class="form__submit">
           <Btn text="submit"/>
         </div>
@@ -62,7 +59,28 @@ export default {
     async submit() {
       if(!this.validarSubmit()) 
         return ;
-     this.tryFailed = await this.login(this.form); 
+      try {
+        await this.login(this.form); 
+        this.$swal.fire({
+          title: 'Login realizado com sucesso',
+          position: 'top-end',
+          icon: 'success',
+          timer: 1500,
+          showConfirmButton: false,
+       });
+       const vm = this;
+       setTimeout(function(){ 
+         vm.$router.push({name: "Home"});
+       }, 2000);
+      }catch {
+        this.$swal.fire({
+          title: 'Email ou senha incorretos',
+          position: 'top-end',
+          icon: 'error',
+          showConfirmButton: false,
+          confirmButtonColor: '#e00f00',
+       });
+      }
     },
     
     validacoes() {

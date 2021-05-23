@@ -27,10 +27,14 @@ export default {
     text-transform: uppercase;
     text-align: center;
     padding: 0.5rem 0 0.5rem 0;
-    transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.1s;
 
     &:hover {
       background-color: #b40c00;
+    }
+    
+    &:active {
+      transform: translateY(-2px);
     }
   }
 </style>

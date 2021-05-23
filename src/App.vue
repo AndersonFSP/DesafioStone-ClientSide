@@ -16,7 +16,7 @@ export default {
   mounted() {
     if(localStorage.token)
       store.state.token = localStorage.token
-    console.log(store.state)
+    console.log(store.state.token)
   },
 }
 </script>

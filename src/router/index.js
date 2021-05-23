@@ -9,7 +9,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import("../views/Home.vue"),
-    meta: { public: true }
+    meta: { public: false }
   },
   {
     path: '/login',
