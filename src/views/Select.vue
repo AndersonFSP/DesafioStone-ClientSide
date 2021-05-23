@@ -18,12 +18,12 @@ export default {
       itens: [
         {
           image: "https://i.pinimg.com/originals/80/80/3b/80803b099fec4542ac3e070cd8078cf8.jpg",
-          link: "",
-          btn_text: "View hqs" 
+          link: "/comics",
+          btn_text: "View comics" 
         },
          {
           image: "https://wallpaperaccess.com/full/2931065.jpg",
-          link: "",
+          link: "/characters",
           btn_text: "View Characters" 
         }
       ]

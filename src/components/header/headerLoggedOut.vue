@@ -23,11 +23,12 @@ export default {
     display: flex;
 
     .menu__link {
+      transition: all ease-in-out 0.2s;
       text-decoration: none;
       margin-right: 1.25rem;
       
       &:hover {
-        text-decoration: underline;
+        color: red;
       }
     }
   }

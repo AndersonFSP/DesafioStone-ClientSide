@@ -29,6 +29,18 @@ const routes = [
     component: () => import("../views/Select"),
     meta: { public: false }
   },
+  {
+    path: '/characters',
+    name: 'Character',
+    component: () => import("../views/Characters"),
+    meta: { public: false }
+  },
+  {
+    path: '/comics',
+    name: 'Comics',
+    component: () => import("../views/Comics"),
+    meta: { public: false }
+  },
 ]
 
 const router = new VueRouter({

@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 import VueSweetalert2  from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import dotenv from 'dotenv'
 
+dotenv.config()
 Vue.use(VueSweetalert2)
 Vue.config.productionTip = false
 

@@ -1,15 +1,18 @@
 <template>
   <div class="card-select">
-    <div class="card-select__imagebox">
-      <img 
-        class="card-select__image" 
-        :src="item.image" 
-        alt="movie image"
-      />
-    </div>
-    <div class="card-select__content">
-      <Btn :text="item.btn_text"/>
-    </div>
+    <router-link :to="item.link">
+      <div class="card-select__imagebox">
+        <img 
+          class="card-select__image" 
+          :src="item.image" 
+          alt="movie image"
+        />
+      </div>
+      <div class="card-select__content">
+        
+          <Btn :text="item.btn_text"/>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -36,7 +39,10 @@ export default {
     position: relative;
     cursor: pointer;
     
-
+    a {
+      text-decoration: none;
+    }
+    
     @media screen and (min-width: 0) {
       width: calc(90% - 1.5rem);
     }

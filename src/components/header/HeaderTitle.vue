@@ -1,12 +1,14 @@
 <template>
   <div class="cabecalho__boxtitulo">
     <router-link to="/">
-      <h1>Desafio</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Stone_pagamentos.png/1200px-Stone_pagamentos.png" alt="">
     </router-link>
   </div>
 </template>
 
 <script>
+// import ss from '../../assets/stone-logo.svg'
+
 export default {
   name: "HeaderTitle"
 }
@@ -14,18 +16,8 @@ export default {
 
 <style lang="scss">
   .cabecalho__boxtitulo {
-    background-color: #333;
-    border-radius: 3%;
-    padding: 4px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-
-    a {
-      text-decoration: none;
-    }
-
-    h1 {
-      color: #fff;
+    img {
+      width: 100px;
     }
 
     @media screen and(min-width:0) {
