@@ -2,7 +2,7 @@
   <nav class="menu">
     <ul class="menu__lista">
       <li class="menu__item">
-        <router-link to="#" class="menu__link">Visualizar Perfil</router-link>
+        <router-link to="#" class="menu__link">{{ user.name }}</router-link>
       </li> 
       <li class="menu__item">
         <router-link to="#" class="menu__link" @click.native="logout">Logout</router-link>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 
 export default {
   name: "HeaderLoggedOut",
@@ -19,7 +20,10 @@ export default {
     logout() {
       this.$store.commit('logout');
       this.$router.push({ name: "Login"})
-    }
+    },
+  },
+  computed: {
+    ...mapGetters(['user'])
   }
 
 }

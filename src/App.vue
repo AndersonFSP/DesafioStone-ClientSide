@@ -7,7 +7,6 @@
 
 <script>
 import Header from './components/header/Header';
-import store from './store/modules/auth';
 
 export default {
   components:{
