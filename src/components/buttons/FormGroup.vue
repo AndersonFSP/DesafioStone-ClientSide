@@ -41,9 +41,9 @@ export default {
  }
 
  .erro {
-   color: tomato;
+   color: #e00f00;
     & input {
-      border-color:tomato;
+      border-color:#e00f00;
     }
  }
 </style>

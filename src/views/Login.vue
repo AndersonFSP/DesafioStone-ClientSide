@@ -5,21 +5,21 @@
         <FormGroup 
           label="E-mail *"
           :hasError="campos_invalidos.email"
-          menssagemErro="e-mail não informado"
+          menssagemErro="E-mail is required."
         >
           <CustomInput 
             v-model="form.email"
-            placeholder="Digite o e-mail" 
+            placeholder="E-mail" 
           />  
         </FormGroup>
         <FormGroup 
-          label="Senha *"
+          label="Password *"
           :hasError="campos_invalidos.password"
-          menssagemErro="e-mail não informado"
+          menssagemErro="Password is required."
         >
           <CustomInput 
             v-model="form.password" 
-            placeholder="Digite o e-mail" 
+            placeholder="Password" 
             type="password"
           />  
         </FormGroup>
@@ -63,7 +63,7 @@ export default {
       try {
         await this.login(this.form); 
         this.$swal.fire({
-          title: 'Login realizado com sucesso',
+          title: 'Login successfully',
           position: 'top-end',
           icon: 'success',
           timer: 1500,
@@ -75,7 +75,7 @@ export default {
        }, 2000);
       }catch {
         this.$swal.fire({
-          title: 'Email ou senha incorretos',
+          title: 'Wrong email or password',
           position: 'top-end',
           icon: 'error',
           showConfirmButton: false,

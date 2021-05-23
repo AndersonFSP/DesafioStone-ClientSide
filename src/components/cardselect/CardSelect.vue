@@ -8,7 +8,7 @@
       />
     </div>
     <div class="card-select__content">
-      <Btn :text="item.btn_text"></Btn>
+      <Btn :text="item.btn_text"/>
     </div>
   </div>
 </template>

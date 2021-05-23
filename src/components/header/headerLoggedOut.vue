@@ -2,10 +2,10 @@
   <nav class="menu">
     <ul class="menu__lista">
       <li class="menu__item">
-        <router-link to="/login" class="menu__link ativo">Login</router-link>
+        <router-link to="/login" class="menu__link">Login</router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="/create" class="menu__link">Cadastre-se</router-link>
+        <router-link to="/create" class="menu__link">Sign in</router-link>
       </li>
     </ul>
   </nav>
@@ -25,8 +25,7 @@ export default {
     .menu__link {
       text-decoration: none;
       margin-right: 1.25rem;
-      color: #333;
-
+      
       &:hover {
         text-decoration: underline;
       }

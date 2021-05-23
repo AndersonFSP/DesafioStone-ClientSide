@@ -46,11 +46,18 @@ export default {
     .menu__link {
       text-decoration: none;
       margin-right: 1.25rem;
-      color: #333;
 
       &:hover {
         text-decoration: underline;
       }
     }
+  }
+  li a.router-link-active {
+    color: red;
+    font-weight: bold;
+  }
+  
+   li a {
+    color: #333;
   }
 </style>
