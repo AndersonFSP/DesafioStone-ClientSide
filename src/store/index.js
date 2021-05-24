@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import auth from './modules/auth';
-import marvel from './modules/marvel';
+import characters from './modules/characters';
+import comics from './modules/comics';
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     auth,
-    marvel
+    characters,
+    comics
   }
 });

@@ -49,12 +49,12 @@ export default {
       flex-direction: row;
       width: 60%;
       min-height: 80%;
-      height: 450px;
+      /* height: 450px; */
     }
     @media screen and(min-width:992px) {
       width: 60%;
       min-height: 80%;
-      height: 400px;
+      /* height: 400px; */
     }
   }
   .char-view__image {
@@ -84,7 +84,7 @@ export default {
     }
     .char-view__return {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
     }
   }
 </style>

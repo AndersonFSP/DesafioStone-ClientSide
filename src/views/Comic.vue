@@ -11,7 +11,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import Viewer from '../components/viewer/Viewer'
+import Viewer from '../components/viewer/Show'
 
 export default {
   components: {
