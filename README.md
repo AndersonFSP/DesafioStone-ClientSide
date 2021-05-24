@@ -1,4 +1,4 @@
-# desafio-stone
+# Desafio Stone
 
 ## Project setup
 ```

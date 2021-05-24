@@ -11,25 +11,22 @@ const getters = {
 
 const actions = {
   async getCharacters({ commit }, form) {
-      const response =  await axios.get(`/characters`, {
-        params: {
-          apikey: public_key,
-          name: "Captain America"
-          // limit: 30,
-        }
-      });
-      const data = response.data.data.results;
-      console.log(data)
-      // commit('setCharacters', { token, user });
+    const response =  await axios.get(`/characters`, {
+      params: {
+        apikey: public_key,
+        // name: ""
+        // limit: 30,
+      }
+    });
+    const characters = response.data.data.results;
+    console.log(characters);
+    commit('setCharacters', { characters });
   },
-
-
 }
 
 const mutations = {
-  defineUserLogin(state, { token, user }) {
-    state.token = token;
-    state.user = user;
+  setCharacters(state, { characters }) {
+    state.characters = characters;
   },
 }
 
