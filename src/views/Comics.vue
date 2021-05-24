@@ -40,7 +40,7 @@ export default {
     onSearch(value) {
       let filter = { limit: this.limit };
       if(value)
-        filter = {name: value};
+        filter = {title: value};
       this.getComics(filter)
     },
 

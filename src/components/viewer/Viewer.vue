@@ -84,7 +84,7 @@ export default {
     }
     .char-view__return {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
     }
   }
 </style>

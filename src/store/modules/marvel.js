@@ -30,11 +30,11 @@ const actions = {
   },
   
   async getComics({ commit }, config = {}) {
-    const { name, limit } = config;
+    const { title, limit } = config;
     const infos = {
       params: {
         apikey: public_key,
-        name,
+        title,
         limit
       }
     }
