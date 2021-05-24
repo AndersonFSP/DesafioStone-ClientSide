@@ -40,5 +40,8 @@ export default {
     justify-content: center;
     align-items: center;
   }
-  
+  .see-more {
+    display: flex;
+    justify-content: center;
+  }
 </style>

@@ -51,13 +51,11 @@ export default {
   },
 
   mounted() {
-    this.getCharacters({ limit: this.limit });
+    if(!this.characters.length)
+      this.getCharacters({ limit: this.limit });
   }
 }
 </script>
 <style lang="scss">
-  .see-more {
-    display: flex;
-    justify-content: center;
-  }
+
 </style>

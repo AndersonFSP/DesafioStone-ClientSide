@@ -2,7 +2,7 @@
   <div class="card">
     <img class="card__image" :src="img" alt="movie image">
     <div class="card__content">
-      <div class="card__title">{{ item.name }}</div>
+      <div class="card__title">{{ title }}</div>
     </div>
   </div>
 </template>
@@ -18,6 +18,9 @@ export default {
     img() {
       const thumb = this.item.thumbnail;
       return `${thumb.path}.${thumb.extension}`
+    },
+    title() {
+      return this.item.title? this.item.title: this.item.name;
     }
   }
 }
