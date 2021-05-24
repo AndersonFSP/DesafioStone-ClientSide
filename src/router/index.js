@@ -41,6 +41,18 @@ const routes = [
     component: () => import("../views/Comics"),
     meta: { public: false }
   },
+  {
+    path: '/char/:id',
+    name: 'Char',
+    component: () => import("../views/Char"),
+    meta: { public: false }
+  },
+  {
+    path: '/comic/:id',
+    name: 'Comic',
+    component: () => import("../views/Comic"),
+    meta: { public: false }
+  },
 ]
 
 const router = new VueRouter({

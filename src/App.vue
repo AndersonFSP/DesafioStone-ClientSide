@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
       <router-view/>
-    <Footer/>
+    <!-- <Footer/> -->
   </div>
 </template>
 
@@ -30,6 +30,7 @@ export default {
   body {
     background-color: #111111;
     color: #fff;
+    padding-bottom: 100px;
   }
   #app {
     -webkit-font-smoothing: antialiased;

@@ -27,7 +27,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 8rem;
     margin-right:0px ;
   }
 </style>

@@ -9,7 +9,6 @@
         />
       </div>
       <div class="card-select__content">
-        
           <Btn :text="item.btn_text"/>
       </div>
     </router-link>
@@ -33,6 +32,7 @@ export default {
 <style lang="scss">
   .card-select {
     border-radius: 2%;
+    box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;

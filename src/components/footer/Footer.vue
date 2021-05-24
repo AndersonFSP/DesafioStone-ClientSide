@@ -15,9 +15,12 @@ export default {
 <style lang="scss">
   footer {
     background-color: #333;
-    margin-top: 8rem;
     height: 5rem;
     text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 
     h2 {
       padding: 25px;
