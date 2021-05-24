@@ -19,5 +19,9 @@ export default {
     width: 100px;
     height: 41px;
     font-size: 17px;
+
+    &:active {
+      background-color: grey;
+    }
   }
 </style>

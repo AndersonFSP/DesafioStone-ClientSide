@@ -33,7 +33,7 @@ export default {
     searchContent() {
       this.$emit("search", this.search)
     }
-  }
+  },
 }
 </script>
 
@@ -50,11 +50,4 @@ export default {
       flex-direction: row;
     }
   }
-
-  /* .form__submit {
-    padding: 6px;
-    font-size: 17px;
-    border: none;
-    border-radius: 3px;
-  } */
 </style>

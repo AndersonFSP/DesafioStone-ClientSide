@@ -8,7 +8,6 @@
         text="See more"
         @click.native="seeMore"
       />
-    
     </div>
   </section>
 </template>
@@ -39,10 +38,14 @@ export default {
     ...mapActions(['getCharacters']),
 
     onSearch(value) {
-      console.log(value)
+      let filter = { limit: this.limit };
+      if(value)
+        filter = {name: value};
+      this.getCharacters(filter)
     },
+
     seeMore() {
-      this.limit = this.limit + 5; 
+      this.limit = this.limit + 4; 
       this.getCharacters({ limit: this.limit  })
     }
   },
