@@ -3,7 +3,12 @@
     <Search @search="onSearch" searching="characters"/>
     <Cards :itens="characters"/>
     <div class="see-more">
-      <Btn text="See more"></Btn>
+      <Btn 
+        v-if="characters.length" 
+        text="See more"
+        @click.native="seeMore"
+      />
+    
     </div>
   </section>
 </template>
@@ -20,6 +25,11 @@ export default {
     Cards,
     Btn
   },
+  data() {
+    return {
+      limit: 20,
+    }
+  },
 
   computed: {
     ...mapGetters(['characters']),
@@ -30,11 +40,15 @@ export default {
 
     onSearch(value) {
       console.log(value)
+    },
+    seeMore() {
+      this.limit = this.limit + 5; 
+      this.getCharacters({ limit: this.limit  })
     }
   },
 
   mounted() {
-    this.getCharacters();
+    this.getCharacters({ limit: this.limit });
   }
 }
 </script>

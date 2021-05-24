@@ -23,7 +23,7 @@
             type="password"
           />  
         </FormGroup>
-        <div class="form__submit">
+        <div class="form__submit-area">
           <Btn text="submit"/>
         </div>
       </FormBox>
@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .form__submit {
+  .form__submit-area {
     display: flex;
     justify-content: center;
     margin: 1rem 0 2rem 0;

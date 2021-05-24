@@ -10,14 +10,16 @@ const getters = {
 }
 
 const actions = {
-  async getCharacters({ commit }, form) {
-    const response =  await axios.get(`/characters`, {
+  async getCharacters({ commit }, config = {}) {
+    const { name, limit } = config;
+    const infos = {
       params: {
         apikey: public_key,
-        // name: ""
-        // limit: 30,
+        name,
+        limit
       }
-    });
+    }
+    const response =  await axios.get(`/characters`, infos);
     const characters = response.data.data.results;
     console.log(characters);
     commit('setCharacters', { characters });

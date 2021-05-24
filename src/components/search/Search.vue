@@ -1,5 +1,5 @@
 <template>
-  <form class="form" @submit.prevent="searchContent">
+  <form class="form-search" @submit.prevent="searchContent">
     <CustomInput v-model="search" :placeholder="placeholder"/>
     <SearchBtn/>
   </form>
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-  form {
+  .form-search {
     display: flex;
     justify-content: center;
     padding: 3rem;
