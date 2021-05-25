@@ -43,7 +43,7 @@ export default {
     font-size: 1.3rem;
     .icon {
       margin-top: 4px;
-      margin-right: 3px;
+      margin-right: 2px;
     }
   }
 

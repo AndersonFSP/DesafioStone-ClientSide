@@ -2,16 +2,24 @@
   <nav class="menu">
     <ul class="menu__lista">
       <li class="menu__item">
-        <router-link to="/home" class="menu__link">Home</router-link>
+        <router-link to="/home" class="menu__link">
+        <i class="fa user-icon fa-home">Home</i>
+        </router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="/select" class="menu__link">Marvel Content</router-link>
+        <router-link to="/select" class="menu__link">
+          <i class="fa fa-superpowers"></i>Marvel Content
+        </router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="/profile" class="menu__link">{{ user.name }}</router-link>
+        <router-link to="/profile" class="menu__link">
+          <i class="fa user-icon fa-user"></i>{{ user.name }}
+        </router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="#" class="menu__link" @click.native="logout">Logout</router-link>
+        <router-link to="#" class="menu__link" @click.native="logout">
+          <i class="fa fa-sign-out"></i>Logout
+        </router-link>
       </li> 
     </ul>
   </nav>
@@ -55,6 +63,10 @@ export default {
 
       &:hover {
         color: red;
+      }
+
+      .user-icon {
+        margin-right: 3px;
       }
     }
   }

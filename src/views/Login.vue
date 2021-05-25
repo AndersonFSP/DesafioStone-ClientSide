@@ -41,17 +41,11 @@ export default {
   },
   data() {
     return { 
-      tryFailed: false,
       form: {
         email: "",
         password: ""
       }
     }
-  },
-  computed: {
-    failed() {
-      return this.tryFailed 
-    },
   },
   methods: {
     ...mapActions(['login']),

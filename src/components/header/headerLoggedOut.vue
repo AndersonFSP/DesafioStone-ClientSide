@@ -2,13 +2,19 @@
   <nav class="menu">
     <ul class="menu__lista">
       <li class="menu__item">
-        <router-link to="/home" class="menu__link">Home</router-link>
+        <router-link to="/home" class="menu__link">
+          <i class="fa user-icon fa-home">Home</i>
+        </router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="/login" class="menu__link">Login</router-link>
+        <router-link to="/login" class="menu__link">
+          <i class="fa fa-sign-in" style="margin-right:2px;"></i>Login
+        </router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="/create" class="menu__link">Sign in</router-link>
+        <router-link to="/create" class="menu__link">
+          <i class="fa fa-user-plus" aria-hidden="true"></i>Sign in
+        </router-link>
       </li>
     </ul>
   </nav>
