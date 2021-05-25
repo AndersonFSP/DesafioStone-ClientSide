@@ -49,7 +49,6 @@ const actions = {
     const response =  await axios.get(`/characters/${id}/comics`, infos);
     const comics = response.data.data.results;
     return comics
-    // retu
   },
 }
 

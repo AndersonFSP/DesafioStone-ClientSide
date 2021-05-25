@@ -1,24 +1,24 @@
 <template>
   <div class="container" style="flex-direction: column;">
-    <Viewer
+    <Show
       v-if="char.id"
       :image="image"
       :title="char.name"
       :description="char.description"
     />
-    <h1 class="char-is-present">is present in ...</h1>
+    <h2 class="char-is-present">is present in ...</h2>
     <Cards v-if="comics.length" :itens="comics"/>
   </div> 
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-import Viewer from '../components/viewer/Show'
+import Show from '../components/viewer/Show'
 import Cards from '../components/cards/Cards';
 
 export default {
   components: {
-    Viewer,
+    Show,
     Cards
   },
   data() {

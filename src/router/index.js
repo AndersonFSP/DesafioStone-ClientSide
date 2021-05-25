@@ -6,10 +6,10 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: () => import("../views/Home.vue"),
-    meta: { public: false }
+    meta: { public: true }
   },
   {
     path: '/login',

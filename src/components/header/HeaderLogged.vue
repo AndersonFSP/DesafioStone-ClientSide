@@ -2,6 +2,9 @@
   <nav class="menu">
     <ul class="menu__lista">
       <li class="menu__item">
+        <router-link to="/home" class="menu__link">Home</router-link>
+      </li> 
+      <li class="menu__item">
         <router-link to="/select" class="menu__link">Marvel Content</router-link>
       </li> 
       <li class="menu__item">

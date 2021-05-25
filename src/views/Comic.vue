@@ -1,29 +1,34 @@
 <template>
-  <div class="container">
-    <Viewer
+  <div class="container" style="flex-direction: column;">
+    <Show
       v-if="comic.id"
       :image="image"
       :title="comic.title"
       :description="comic.description"
     />
+    <h2 class="char-is-present">Appearances ...</h2>
+    <Cards v-if="characters.length" :itens="characters"/>
   </div> 
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-import Viewer from '../components/viewer/Show'
+import Show from '../components/viewer/Show'
+import Cards from '../components/cards/Cards';
 
 export default {
   components: {
-    Viewer
+    Show,
+    Cards
   },
   data() {
     return {
-      comic: {}
+      comic: {},
+      characters: []
     }
   },
   methods: {
-    ...mapActions(['getComic'])
+    ...mapActions(['getComic', 'getComicCharacters'])
   },
   computed: {
     image() {
@@ -33,6 +38,7 @@ export default {
   },
   async mounted() {
     this.comic = await this.getComic(this.$route.params.id);
+    this.characters = await this.getComicCharacters(this.$route.params.id);
   }
 }
 </script>

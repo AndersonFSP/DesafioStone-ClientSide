@@ -5,7 +5,7 @@
       <h2>{{title}}</h2>
       <h3>{{content}}</h3>
       <div class="char-view__return">
-        <Btn text="back to list" @click.native="$router.go(-1)"/>
+        <Btn text="back" @click.native="$router.go(-1)"/>
       </div>
     </div> 
   </div>
@@ -15,7 +15,7 @@
 import Btn from '../buttons/Btn';
 
 export default {
-  name: "Viewer",
+  name: "Show",
   components: {
     Btn
   },
@@ -70,7 +70,7 @@ export default {
   }
 
   .char-view__content {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 2em;
     
     h3 {
      

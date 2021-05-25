@@ -34,8 +34,18 @@ const actions = {
     }
     const response =  await axios.get(`/comics`, infos);
     const comic = response.data.data.results[0];
-    console.log(comic)
     return comic;
+  },
+
+  async getComicCharacters({ commit }, id) {
+    const infos = {
+      params: {
+        apikey: public_key,
+      }
+    }
+    const response =  await axios.get(`/comics/${id}/characters`, infos);
+    const characters = response.data.data.results;
+    return characters;
   },
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="cabecalho__boxtitulo">
-    <router-link to="/">
+    <router-link to="/home">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Stone_pagamentos.png/1200px-Stone_pagamentos.png" alt="">
     </router-link>
   </div>
