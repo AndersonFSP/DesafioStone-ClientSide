@@ -19,6 +19,12 @@ const routes = [
     meta: { public: true }
   },
   {
+    path: '/update',
+    name: 'Update',
+    component: () => import("../views/Update"),
+    meta: { public: true }
+  },
+  {
     path: '/create',
     name: 'Create',
     component: () => import("../views/CreateUser"),

@@ -8,7 +8,7 @@
       <h3 class="profile__info">E-mail: <span>{{ user.email }}</span></h3>
     </div>
     <div class="profile__update-btn-area">
-      <Btn text="update account"/>
+      <Btn text="update account" @click.native="$router.push({name:'Update'})"/>
     </div>
   </div>
 </template>

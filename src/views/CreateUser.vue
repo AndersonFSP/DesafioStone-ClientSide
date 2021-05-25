@@ -43,7 +43,7 @@
 
 <script>
 import Formulario from '../HighOrderComponents/Formulario';
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   extends: {

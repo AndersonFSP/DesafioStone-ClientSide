@@ -4,6 +4,7 @@
     class="btn" 
     :placeholder="placeholder" 
     name="search" 
+    v-model="val"
     @input="handleInput($event.target.value)"
    />
 </template>
@@ -17,6 +18,11 @@ export default {
     type: {
       type: String,
       default: "text"
+    }
+  },
+  data(vm) {
+    return {
+      val: vm.$props.value
     }
   },
   methods: {
