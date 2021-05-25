@@ -8,6 +8,7 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
+    alias: '/',
     component: () => import("../views/Home.vue"),
     meta: { public: true }
   },
@@ -22,6 +23,12 @@ const routes = [
     name: 'Create',
     component: () => import("../views/CreateUser"),
     meta: { public: true }
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import("../views/Profile"),
+    meta: { public: false }
   },
   {
     path: '/select',

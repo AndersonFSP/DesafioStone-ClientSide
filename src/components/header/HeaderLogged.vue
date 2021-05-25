@@ -8,7 +8,7 @@
         <router-link to="/select" class="menu__link">Marvel Content</router-link>
       </li> 
       <li class="menu__item">
-        <router-link to="#" class="menu__link">{{ user.name }}</router-link>
+        <router-link to="/profile" class="menu__link">{{ user.name }}</router-link>
       </li> 
       <li class="menu__item">
         <router-link to="#" class="menu__link" @click.native="logout">Logout</router-link>
