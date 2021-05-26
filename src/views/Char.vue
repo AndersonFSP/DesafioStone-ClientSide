@@ -2,6 +2,7 @@
   <div class="container" style="flex-direction: column;">
     <Show
       v-if="char.id"
+      :id="char.id"
       :image="image"
       :title="char.name"
       :description="char.description"

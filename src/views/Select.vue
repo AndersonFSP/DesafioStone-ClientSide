@@ -7,6 +7,7 @@
 <script>
 import Btn from '../components/buttons/Btn';
 import CardsSelect from '../components/cardselect/CardsSelect';
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -28,6 +29,16 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['user', 'charactersFavorites']),
+  },
+  methods: {
+    ...mapActions(['getCharacterFavorites'])
+  },
+  mounted() {
+    if(!this.charactersFavorites.length)
+      this.getCharacterFavorites(this.user.id);
   }
 }
 </script>
