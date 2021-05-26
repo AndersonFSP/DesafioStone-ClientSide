@@ -15,6 +15,7 @@ const actions = {
     const response = await axios.get(`/user/${user_id}/comic/favorite`);
     const comics = response.data;
     localStorage.setItem('comicsFavorites', JSON.stringify(comics));
+    // console.log(comics)
     commit('setComicsFavorites', { comics });
   },
 
