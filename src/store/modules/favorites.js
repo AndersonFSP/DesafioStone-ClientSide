@@ -17,7 +17,7 @@ const actions = {
     const characters = response.data;
     localStorage.setItem('charactersFavorites', JSON.stringify(characters));
     console.log(characters)
-    commit('setCharacterFavorites', { characters })
+    commit('setCharacterFavorites', { characters });
   },
 
   async favor({ commit }, infos) {
@@ -25,11 +25,19 @@ const actions = {
     const { name, id_character } = infos; 
     const response = await axios.post(`/user/${user_id}/character/favorite`, {name, id_character});
     state.charactersFavorites.push(response.data);
-  }
+  },
+
+  async disfavor({ commit }, infos) {
+    const { user_id, id_character } = infos;
+    await axios.delete(`/user/${user_id}/character/${id_character}`, {name, id_character});
+    const characters = state.charactersFavorites.filter(character => character.id_character != id_character);
+    commit('setCharacterFavorites', { characters });
+  },
 }
 
 const mutations = {
   setCharacterFavorites(state, { characters }) {
+    localStorage.setItem('charactersFavorites', JSON.stringify(characters));
     state.charactersFavorites = characters;
   }
 }

@@ -47,7 +47,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['favor']),
+    ...mapActions(['favor', 'disfavor']),
 
     favItem() {
       if(!this.favorite) {
@@ -63,6 +63,18 @@ export default {
           console.log(e)
         }
       }
+      else {
+        this.disfavItem() 
+      }
+    },
+
+    disfavItem() {
+      const body = {
+        user_id: this.user.id,
+        id_character: this.id
+      }
+      this.disfavor(body);
+      this.favorite = !this.favorite
     }
   },
   mounted() {
