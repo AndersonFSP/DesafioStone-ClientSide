@@ -2,6 +2,7 @@
   <div class="container" style="flex-direction: column;">
     <Show
       v-if="comic.id"
+      :id="comic.id"
       :image="image"
       :title="comic.title"
       :description="comic.description"

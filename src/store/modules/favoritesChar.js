@@ -1,5 +1,4 @@
 import { mainAxios as axios } from "../../service/axios";
-import { public_key } from '../../MarvelApi';
 
 const state = {
   charactersFavorites: localStorage.getItem('charactersFavorites')
@@ -16,21 +15,22 @@ const actions = {
     const response = await axios.get(`/user/${user_id}/character/favorite`);
     const characters = response.data;
     localStorage.setItem('charactersFavorites', JSON.stringify(characters));
-    console.log(characters)
     commit('setCharacterFavorites', { characters });
   },
 
-  async favor({ commit }, infos) {
+  async favorChar({ commit }, infos) {
     const { user_id } = infos;
     const { name, id_character } = infos; 
     const response = await axios.post(`/user/${user_id}/character/favorite`, {name, id_character});
-    state.charactersFavorites.push(response.data);
+    const characters = [...state.charactersFavorites, response.data];
+    commit('setCharacterFavorites', { characters });
   },
 
-  async disfavor({ commit }, infos) {
+  async disfavorChar({ commit }, infos) {
     const { user_id, id_character } = infos;
-    await axios.delete(`/user/${user_id}/character/${id_character}`, {name, id_character});
+    const response = await axios.delete(`/user/${user_id}/character/${id_character}`);
     const characters = state.charactersFavorites.filter(character => character.id_character != id_character);
+    console.log(characters)
     commit('setCharacterFavorites', { characters });
   },
 }

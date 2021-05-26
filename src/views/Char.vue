@@ -5,6 +5,7 @@
       :id="char.id"
       :image="image"
       :title="char.name"
+      mode="character"
       :description="char.description"
     />
     <h2 class="char-is-present">is present in ...</h2>

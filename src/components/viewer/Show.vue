@@ -1,86 +1,43 @@
 <template>
-  <div class="char-view">
-    <img :src="image" class="char-view__image" alt="">
-    <div :class="'char-view__favorite '+ favoriteStyle">
-      <button @click="favItem">
-        <i  :class="'fa fa-heart '"></i>
-      </button> 
-    </div>
-    <div class="char-view__content"> 
-      <h2>{{title}}</h2>
-      <h3>{{content}}</h3>
-      <div class="char-view__return">
-        <Btn text="back" @click.native="$router.go(-1)"/>
-      </div>
-    </div> 
-  </div>
+  <ShowChar
+    v-if="mode == 'character'"
+    :id="id"
+    :image="image"
+    :title="title"
+    :description="description"
+  />
+  <ShowComic
+    v-else
+    :id="id"
+    :image="image"
+    :title="title"
+    :description="description"
+  />
 </template>
 
 <script>
 import Btn from '../buttons/Btn';
-import { mapActions, mapGetters } from 'vuex';
+import ShowChar from './ShowChar';
+import ShowComic from './ShowComic';
 
 export default {
   name: "Show",
   components: {
-    Btn
+    Btn,
+    ShowChar,
+    ShowComic
   },
   props: {
     id: Number,
     image: String,
     title: String,
-    description: String
-  },
-  data() {
-    return {
-      favorite: false
+    description: String,
+    mode: {
+      validator: function(value) {
+        return ['character', 'comic'].indexOf(value) !== -1
+      }
     }
   },
-  computed: {
-    ...mapGetters(['user', 'charactersFavorites']),
-
-    content() {
-      return this.description ? this.description : "No description"
-    },
-    favoriteStyle() {
-      return this.favorite ? "favorite" : "";
-    }
-  },
-  methods: {
-    ...mapActions(['favor', 'disfavor']),
-
-    favItem() {
-      if(!this.favorite) {
-        const body = {
-          user_id: this.user.id,
-          name: this.title,
-          id_character: this.id
-        }
-        try {
-          this.favor(body);
-          this.favorite = !this.favorite
-        }catch(e) {
-          console.log(e)
-        }
-      }
-      else {
-        this.disfavItem() 
-      }
-    },
-
-    disfavItem() {
-      const body = {
-        user_id: this.user.id,
-        id_character: this.id
-      }
-      this.disfavor(body);
-      this.favorite = !this.favorite
-    }
-  },
-  mounted() {
-    const favorite = this.charactersFavorites.filter(character => character.id_character == this.id);
-    this.favorite = Boolean(favorite[0]);
-  }
 }
 </script>
 
@@ -128,13 +85,12 @@ export default {
     padding: 1rem 2rem 2rem 2em;
     
     h3 {
-     
       min-height: 60%;
       @media screen and(min-width:0) {
         margin-top: 0;
       }
       @media screen and(min-width:768px) {
-         margin-top: 4rem;
+         margin-top: 2rem;
       }
     }
     .char-view__return {
