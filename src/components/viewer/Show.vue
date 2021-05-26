@@ -90,7 +90,7 @@ export default {
         margin-top: 0;
       }
       @media screen and(min-width:768px) {
-         margin-top: 2rem;
+         margin-top: 0.2rem;
       }
     }
     .char-view__return {

@@ -31,14 +31,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['user', 'charactersFavorites']),
+    ...mapGetters(['user', 'charactersFavorites', 'comicsFavorites']),
   },
   methods: {
-    ...mapActions(['getCharacterFavorites'])
+    ...mapActions(['getCharacterFavorites', 'getComicsFavorites'])
   },
   mounted() {
     if(!this.charactersFavorites.length)
       this.getCharacterFavorites(this.user.id);
+
+    if(!this.comicsFavorites.length)
+      this.getComicsFavorites(this.user.id);
   }
 }
 </script>

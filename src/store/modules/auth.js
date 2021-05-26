@@ -47,7 +47,8 @@ const mutations = {
   logout(state) {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    localStorage.removeItem("charactersFavorites")
+    localStorage.removeItem("charactersFavorites");
+    localStorage.removeItem("comicsFavorites")
     state.token = null,
     state.user = {}
   }

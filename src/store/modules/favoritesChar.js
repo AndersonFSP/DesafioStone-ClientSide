@@ -20,8 +20,8 @@ const actions = {
 
   async favorChar({ commit }, infos) {
     const { user_id } = infos;
-    const { name, id_character } = infos; 
-    const response = await axios.post(`/user/${user_id}/character/favorite`, {name, id_character});
+    const { name, id_character, image } = infos; 
+    const response = await axios.post(`/user/${user_id}/character/favorite`, {name, id_character, image});
     const characters = [...state.charactersFavorites, response.data];
     commit('setCharacterFavorites', { characters });
   },

@@ -54,7 +54,8 @@ export default {
         const body = {
           user_id: this.user.id,
           name: this.title,
-          id_character: this.id
+          id_character: this.id,
+          image: this.image
         }
         try {
           this.favorChar(body);

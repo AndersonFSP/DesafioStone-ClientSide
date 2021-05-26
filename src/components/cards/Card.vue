@@ -18,6 +18,9 @@ export default {
   },
   computed: {
     img() {
+      if(this.item.image)
+        return this.item.image;
+        
       const thumb = this.item.thumbnail;
       return `${thumb.path}.${thumb.extension}`
     },
