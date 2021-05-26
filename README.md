@@ -1,18 +1,9 @@
 # Desafio Stone client side 
 ## Projeto utilizando Vue.js 
 
-## Project setup
+## É necessário o [server side](https://github.com/AndersonFSP/DesafioStone-ServerSide) 
+
+## Instalação
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
